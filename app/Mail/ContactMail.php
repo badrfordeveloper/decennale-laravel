@@ -15,7 +15,6 @@ class ContactMail extends Mailable
 
     public $details;
     public $fromAddress;
-    public $reference;
     /**
      * Create a new message instance.
      */
@@ -23,7 +22,6 @@ class ContactMail extends Mailable
     {
         $this->details = $details;
         $this->fromAddress = $fromAddress;
-        $this->reference = $details['reference'] ?? '';
     }
 
     /**
@@ -33,7 +31,7 @@ class ContactMail extends Mailable
     {
         return new Envelope(
             from: $this->fromAddress,
-            subject: 'Signature_Assurmabarak : '.$this->reference,
+            subject: 'Devis : Décennale Express',
         );
     }
 
