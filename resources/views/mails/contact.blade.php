@@ -1,142 +1,226 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Devis: Décennale Express</title>
 </head>
+
 <body>
-    <table border="1" style="border-collapse: collapse; width: 100%;">
-        <tr>
-          <th>Step</th>
-          <th>Key</th>
-          <th>Value</th>
-        </tr>
-        <tr>
-          <td rowspan="2">Step 1</td>
-          <td>Profession</td>
-          <td>ARTISAN_ENTREPRISE_BATIMENT</td>
-        </tr>
-        <tr>
-          <td>SIREN</td>
-          <td>402430276</td>
-        </tr>
-        <tr>
-          <td rowspan="11">Step 2</td>
-          <td>Nom Entreprise</td>
-          <td>EUROPEENNE DE COURTAGE D'ASSURANCES</td>
-        </tr>
-        <tr>
-          <td>Type</td>
-          <td>Nom Propre</td>
-        </tr>
-        <tr>
-          <td>Adresse</td>
-          <td>14 AVENUE</td>
-        </tr>
-        <tr>
-          <td>Code Postal</td>
-          <td>42000</td>
-        </tr>
-        <tr>
-          <td>Ville</td>
-          <td>SAINT-ETIENNE</td>
-        </tr>
-        <tr>
-          <td>Mobile</td>
-          <td>402430276</td>
-        </tr>
-        <tr>
-          <td>Mail</td>
-          <td>c@c.cc</td>
-        </tr>
-        <tr>
-          <td>Nombre Salariés</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>Chiffre d'Affaires</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>Date Création</td>
-          <td>1999-06-01</td>
-        </tr>
-        <tr>
-          <td>Nom Dirigeant</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td rowspan="9">Step 3</td>
-          <td>Déjà Assuré</td>
-          <td>NON</td>
-        </tr>
-        <tr>
-          <td>Assureur Année</td>
-          <td>null</td>
-        </tr>
-        <tr>
-          <td>En Cours</td>
-          <td>null</td>
-        </tr>
-        <tr>
-          <td>Date Résiliation</td>
-          <td>null</td>
-        </tr>
-        <tr>
-          <td>Nom</td>
-          <td>null</td>
-        </tr>
-        <tr>
-          <td>Nombre Sinistre</td>
-          <td>null</td>
-        </tr>
-        <tr>
-          <td>Montant Sinistre</td>
-          <td>null</td>
-        </tr>
-        <tr>
-          <td>Non Paiement</td>
-          <td>null</td>
-        </tr>
-        <tr>
-          <td>Arrière</td>
-          <td>null</td>
-        </tr>
-        <tr>
-          <td rowspan="4">Step 4</td>
-          <td>Chantiers Sous-Traitance</td>
-          <td>OUI</td>
-        </tr>
-        <tr>
-          <td>Reprise Un Année</td>
-          <td>OUI</td>
-        </tr>
-        <tr>
-          <td>Redressement Judiciaire</td>
-          <td>OUI</td>
-        </tr>
-        <tr>
-          <td>Diplômes Bâtiment</td>
-          <td>OUI</td>
-        </tr>
-        <tr>
-          <td>Step 5</td>
-          <td>Garage</td>
-          <td>Garage</td>
-        </tr>
-        <tr>
-          <td rowspan="3">Step 6</td>
-          <td>Date Effet</td>
-          <td>2024-12-28</td>
-        </tr>
-        <tr>
-          <td>Franchise</td>
-          <td>2000 € à 3000 €</td>
-        </tr>
-        <tr>
-          <td>Fractionnement</td>
-          <td>Semestriel (+3%)</td>
-        </tr>
-      </table>
-      
+    <table cellspacing="0" cellpadding="5"
+        style="width:100%;border:solid 1px #e0e0e0;border-collapse:collapse;overflow:wrap">
+        <tbody>
+            <tr style="background-color:#f0f0f0">
+                <td valign="top" width="300" style="background-color:#f0f0f0;padding:5px 0 5px 5px">
+                    <b>Profesion</b>
+                </td>
+                <td style="background-color:#f0f0f0;padding:5px 0">{{ $details['step1']['profession'] }}</td>
+            </tr>
+            <tr style="background-color:#f0f0f0">
+                <td valign="top" width="300" style="background-color:#f0f0f0;padding:5px 0 5px 5px">
+                    <b>Num de SIREN</b>
+                </td>
+                <td style="background-color:#f0f0f0;padding:5px 0">{{ $details['step1']['siren'] }}</td>
+            </tr>
+            <tr style="background-color:#ffffff">
+                <td valign="top" width="300" style="background-color:#ffffff;padding:5px 0 5px 5px">
+                    <b>Entreprise</b>
+                </td>
+                <td style="background-color:#ffffff;padding:5px 0">{{ $details['step2']['nom_entreprise'] }}</td>
+            </tr>
+            <tr style="background-color:#f0f0f0">
+                <td valign="top" width="300" style="background-color:#f0f0f0;padding:5px 0 5px 5px">
+                    <b>Type</b>
+                </td>
+                <td style="background-color:#f0f0f0;padding:5px 0">{{ $details['step2']['type'] }}</td>
+            </tr>
+            <tr style="background-color:#ffffff">
+                <td valign="top" width="300" style="background-color:#ffffff;padding:5px 0 5px 5px">
+                    <b>Adresse</b>
+                </td>
+                <td style="background-color:#ffffff;padding:5px 0">{{ $details['step2']['adresse'] }}</td>
+            </tr>
+            <tr style="background-color:#f0f0f0">
+                <td valign="top" width="300" style="background-color:#f0f0f0;padding:5px 0 5px 5px">
+                    <b>Code Postal</b>
+                </td>
+                <td style="background-color:#f0f0f0;padding:5px 0">{{ $details['step2']['code_postal'] }}</td>
+            </tr>
+            <tr style="background-color:#ffffff">
+                <td valign="top" width="300" style="background-color:#ffffff;padding:5px 0 5px 5px">
+                    <b>Ville</b>
+                </td>
+                <td style="background-color:#ffffff;padding:5px 0">{{ $details['step2']['ville'] }}</td>
+            </tr>
+            <tr style="background-color:#f0f0f0">
+                <td valign="top" width="300" style="background-color:#f0f0f0;padding:5px 0 5px 5px">
+                    <b>Mobile</b>
+                </td>
+                <td style="background-color:#f0f0f0;padding:5px 0">{{ $details['step2']['mobile'] }}</td>
+            </tr>
+            <tr style="background-color:#ffffff">
+                <td valign="top" width="300" style="background-color:#ffffff;padding:5px 0 5px 5px">
+                    <b>Mail</b>
+                </td>
+                <td style="background-color:#ffffff;padding:5px 0"><a href="mailto:contact@p2cenergies.fr"
+                        target="_blank">{{ $details['step2']['mail'] }}</a></td>
+            </tr>
+            <tr style="background-color:#f0f0f0">
+                <td valign="top" width="300" style="background-color:#f0f0f0;padding:5px 0 5px 5px">
+                    <b>Nombre de Salariés + patron</b>
+                </td>
+                <td style="background-color:#f0f0f0;padding:5px 0">{{ $details['step2']['nombre_salaries'] }}</td>
+            </tr>
+            <tr style="background-color:#ffffff">
+                <td valign="top" width="300" style="background-color:#ffffff;padding:5px 0 5px 5px">
+                    <b>Chiffre d'affaires</b>
+                </td>
+                <td style="background-color:#ffffff;padding:5px 0">{{ $details['step2']['chiffre_affaires'] }}</td>
+            </tr>
+            <tr style="background-color:#f0f0f0">
+                <td valign="top" width="300" style="background-color:#f0f0f0;padding:5px 0 5px 5px">
+                    <b>Date de création</b>
+                </td>
+                <td style="background-color:#f0f0f0;padding:5px 0">{{ $details['step2']['date_creation'] }}</td>
+            </tr>
+            <tr style="background-color:#ffffff">
+                <td valign="top" width="300" style="background-color:#ffffff;padding:5px 0 5px 5px">
+                    <b>Nom &amp; prénom du dirigeant</b>
+                </td>
+                <td style="background-color:#ffffff;padding:5px 0">{{ $details['step2']['nom_dirigeant'] }}</td>
+            </tr>
+            <tr style="background-color:#f0f0f0">
+                <td valign="top" width="300" style="background-color:#f0f0f0;padding:5px 0 5px 5px">
+                    <b>Date de naissance</b>
+                </td>
+                <td style="background-color:#f0f0f0;padding:5px 0">{{ $details['step2']['date_naissance'] }}</td>
+            </tr>
+            <tr style="background-color:#ffffff">
+                <td valign="top" width="300" style="background-color:#ffffff;padding:5px 0 5px 5px">
+                    <b>Avez-vous déjà été assuré</b>
+                </td>
+                <td style="background-color:#ffffff;padding:5px 0">{{ $details['step3']['deja_assure'] }}</td>
+            </tr>
+            <tr style="background-color:#f0f0f0">
+                <td valign="top" width="300" style="background-color:#f0f0f0;padding:5px 0 5px 5px">
+                    <b>Nombre d'années d'assurance</b>
+                </td>
+                <td style="background-color:#f0f0f0;padding:5px 0">{{ $details['step3']["assureur"]['annee'] }}</td>
+            </tr>
+            <tr style="background-color:#ffffff">
+                <td valign="top" width="300" style="background-color:#ffffff;padding:5px 0 5px 5px">
+                    <b>Votre contrat est-il en cours</b>
+                </td>
+                <td style="background-color:#ffffff;padding:5px 0">{{ $details['step3']["assureur"]['en_cours'] }}</td>
+            </tr>
+            <tr style="background-color:#f0f0f0">
+                <td valign="top" width="300" style="background-color:#f0f0f0;padding:5px 0 5px 5px">
+                    <b>Date de résiliation de votre dernier contrat</b>
+                </td>
+                <td style="background-color:#f0f0f0;padding:5px 0">{{ $details['step3']["assureur"]['date_resiliation'] }}</td>
+            </tr>
+            <tr style="background-color:#ffffff">
+                <td valign="top" width="300" style="background-color:#ffffff;padding:5px 0 5px 5px">
+                    <b>Nom de l'ancienne compagnie</b>
+                </td>
+                <td style="background-color:#ffffff;padding:5px 0">{{ $details['step3']["assureur"]['nom'] }}</td>
+            </tr>
+            <tr style="background-color:#f0f0f0">
+                <td valign="top" width="300" style="background-color:#f0f0f0;padding:5px 0 5px 5px">
+                    <b>Nombre de sinistres déclarés sur 36 mois</b>
+                </td>
+                <td style="background-color:#f0f0f0;padding:5px 0">{{ $details['step3']["assureur"]['nombre_sinistre'] }}</td>
+            </tr>
+            <tr style="background-color:#ffffff">
+                <td valign="top" width="300" style="background-color:#ffffff;padding:5px 0 5px 5px">
+                    <b>Montant des sinistres déclarés sur 36 mois</b>
+                </td>
+                <td style="background-color:#ffffff;padding:5px 0">{{ $details['step3']["assureur"]['montant_sinistre'] }}</td>
+            </tr>
+            <tr style="background-color:#f0f0f0">
+                <td valign="top" width="300" style="background-color:#f0f0f0;padding:5px 0 5px 5px">
+                    <b>Votre ancien contrat a-t-il été résilié pour non-paiement</b>
+                </td>
+                <td style="background-color:#f0f0f0;padding:5px 0">{{ $details['step3']["assureur"]['non_paiement'] }}</td>
+            </tr>
+            <tr style="background-color:#ffffff">
+                <td valign="top" width="300" style="background-color:#ffffff;padding:5px 0 5px 5px">
+                    <b>Si oui, avez-vous réglé l’arriéré à la compagnie</b>
+                </td>
+                <td style="background-color:#ffffff;padding:5px 0">{{ $details['step3']["assureur"]['arriere'] }}</td>
+            </tr>
+            <tr style="background-color:#f0f0f0">
+                <td valign="top" width="300" style="background-color:#f0f0f0;padding:5px 0 5px 5px">
+                    <b>Votre ancien contrat a-t-il été résilié pour fausse déclaration</b>
+                </td>
+                <td style="background-color:#f0f0f0;padding:5px 0">{{ $details['step3']["assureur"]['fausse_declaration'] }}</td>
+            </tr>
+            <tr style="background-color:#ffffff">
+                <td valign="top" width="300" style="background-color:#ffffff;padding:5px 0 5px 5px">
+                    <b>Donnez vous des chantiers en sous traitance à plus de 30%</b>
+                </td>
+                <td style="background-color:#ffffff;padding:5px 0">{{ $details['step4']['chantiers_sous_traitance'] }}</td>
+            </tr>
+            <tr style="background-color:#f0f0f0">
+                <td valign="top" width="300" style="background-color:#f0f0f0;padding:5px 0 5px 5px">
+                    <b>Souhaitez vous la reprise du passé sur 1 an (+15%)</b>
+                </td>
+                <td style="background-color:#f0f0f0;padding:5px 0">{{ $details['step4']['reprise_un_annee'] }}</td>
+            </tr>
+            <tr style="background-color:#ffffff">
+                <td valign="top" width="300" style="background-color:#ffffff;padding:5px 0 5px 5px">
+                    <b>Etes-vous en redressement judiciaire</b>
+                </td>
+                <td style="background-color:#ffffff;padding:5px 0">{{ $details['step4']['redressement_judiciaire'] }}</td>
+            </tr>
+            <tr style="background-color:#f0f0f0">
+                <td valign="top" width="300" style="background-color:#f0f0f0;padding:5px 0 5px 5px">
+                    <b>Avez-vous des diplomes du batiment</b>
+                </td>
+                <td style="background-color:#f0f0f0;padding:5px 0">{{ $details['step4']['diplomes_batiment'] }}</td>
+            </tr>
+            <tr style="background-color:#ffffff">
+                <td valign="top" width="300" style="background-color:#ffffff;padding:5px 0 5px 5px">
+                    <b>Activité principale</b>
+                </td>
+                <td style="background-color:#ffffff;padding:5px 0">
+                    {{$details['step5'][0]}}
+                </td>
+            </tr>
+            <tr style="background-color:#f0f0f0">
+                <td valign="top" width="300" style="background-color:#f0f0f0;padding:5px 0 5px 5px">
+                    <b>Réalisez-vous des activités secondaires</b>
+                </td>
+                <td style="background-color:#f0f0f0;padding:5px 0">
+                    @foreach ( $details['step5'] as $activity)
+                    {{ $activity }} ,
+                    @endforeach
+                </td>
+            </tr>
+            <tr style="background-color:#ffffff">
+                <td valign="top" width="300" style="background-color:#ffffff;padding:5px 0 5px 5px">
+                    <b>Date d'effet demandée</b>
+                </td>
+                <td style="background-color:#ffffff;padding:5px 0">{{ $details['step6']['date_effet'] }}</td>
+            </tr>
+            <tr style="background-color:#f0f0f0">
+                <td valign="top" width="300" style="background-color:#f0f0f0;padding:5px 0 5px 5px">
+                    <b>Franchise</b>
+                </td>
+                <td style="background-color:#f0f0f0;padding:5px 0">{{ $details['step6']['franchise'] }}</td>
+            </tr>
+            <tr style="background-color:#ffffff">
+                <td valign="top" width="300" style="background-color:#ffffff;padding:5px 0 5px 5px">
+                    <b>Fractionnement</b>
+                </td>
+                <td style="background-color:#ffffff;padding:5px 0">{{ $details['step6']['fractionnement'] }}</td>
+            </tr>
+            <tr style="background-color:#f0f0f0">
+                <td  style="background-color:#f0f0f0;padding:5px"><b>Observations diverses</b> </td>
+                <td style="background-color:#ffffff;padding:5px 0">{{ $details['step6']['observations_diverses'] }}</td>
+
+            </tr>
+        </tbody>
+    </table>
 </body>
+
 </html>
