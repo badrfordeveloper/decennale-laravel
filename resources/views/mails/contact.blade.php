@@ -180,7 +180,7 @@
                     <td>{{ $details['step3']["assureur"]['arriere'] }}</td>
                 </tr>
                 <tr>
-                    <td>Votre ancien contrat a-t-il été résilié pour fausse déclaration</th>
+                    <th>Votre ancien contrat a-t-il été résilié pour fausse déclaration</th>
                     <td>{{ $details['step3']["assureur"]['fausse_declaration'] }}</td>
                 </tr>
                 <tr>
@@ -188,7 +188,7 @@
                     <td>{{ $details['step4']['chantiers_sous_traitance'] }}</td>
                 </tr>
                 <tr>
-                    <td>Souhaitez vous la reprise du passé sur 1 an (+15%)</th>
+                    <th>Souhaitez vous la reprise du passé sur 1 an (+15%)</th>
                     <td>{{ $details['step4']['reprise_un_annee'] }}</td>
                 </tr>
                 <tr>
@@ -196,7 +196,7 @@
                     <td>{{ $details['step4']['redressement_judiciaire'] }}</td>
                 </tr>
                 <tr>
-                    <td>Avez-vous des diplomes du batiment</th>
+                    <th>Avez-vous des diplomes du batiment</th>
                     <td>{{ $details['step4']['diplomes_batiment'] }}</td>
                 </tr>
                 <tr>
@@ -204,11 +204,13 @@
                     <td>{{$details['step5'][0]}}</td>
                 </tr>
                 <tr>
-                    <td>Réalisez-vous des activités secondaires</th>
+                    <th>Réalisez-vous des activités secondaires</th>
                     <td>
-                        @foreach ( $details['step5'] as $activity)
-                        {{ $activity }} ,
-                        @endforeach
+                        <ul>
+                            @foreach ( $details['step5'] as $activity)
+                            <li>{{ $activity }}</li>
+                            @endforeach
+                        </ul>
                     </td>
                 </tr>
                 <tr>
