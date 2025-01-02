@@ -42,9 +42,10 @@
         }
 
         th, td {
-            padding: 15px;
+            padding: 10px;
             text-align: left;
             vertical-align: top;
+            font-size: 14px;
         }
 
         th {
@@ -76,6 +77,35 @@
             text-align: center;
             padding: 15px;
             font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 10px;
+            }
+
+            th, td {
+                display: block;
+                width: 100%;
+                text-align: left;
+                padding: 8px;
+            }
+
+            th {
+                background-color: transparent;
+                color: #333333;
+                font-weight: normal;
+            }
+
+            td {
+                background-color: #f9f9f9;
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            tr:nth-child(even) td {
+                background-color: #ffffff;
+            }
         }
     </style>
 </head>
