@@ -6,7 +6,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            background-color: #f4f4f4;
+            color: #333333;
             margin: 0;
             padding: 0;
         }
@@ -14,53 +15,54 @@
         .email-container {
             max-width: 800px;
             margin: 20px auto;
-            background: #ffffff;
-            border-radius: 8px;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
 
-        .header {
-            background-color: #4CAF50;
+        .email-header {
+            background-color: #0066cc;
             color: white;
+            padding: 20px;
             text-align: center;
-            padding: 20px 10px;
-        }
-
-        .header h1 {
-            margin: 0;
             font-size: 24px;
+            font-weight: bold;
         }
 
-        .content {
+        .email-body {
             padding: 20px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-bottom: 20px;
         }
 
-        table th, table td {
+        th, td {
+            padding: 15px;
             text-align: left;
-            padding: 10px;
+            vertical-align: top;
         }
 
-        table th {
-            background-color: #4CAF50;
-            color: white;
+        th {
+            background-color: #f4f4f4;
+            color: #555555;
+            font-weight: bold;
         }
 
-        table tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        table tr:nth-child(odd) {
+        td {
             background-color: #ffffff;
         }
 
+        tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+
         a {
-            color: #4CAF50;
+            color: #0066cc;
             text-decoration: none;
         }
 
@@ -69,21 +71,21 @@
         }
 
         .footer {
-            background-color: #f1f1f1;
+            background-color: #0066cc;
+            color: white;
             text-align: center;
-            padding: 10px 20px;
-            color: #555;
-            font-size: 12px;
+            padding: 15px;
+            font-size: 14px;
         }
     </style>
 </head>
 
 <body>
     <div class="email-container">
-        <div class="header">
-            <h1>Devis: Décennale Express</h1>
+        <div class="email-header">
+            Devis: Décennale Express
         </div>
-        <div class="content">
+        <div class="email-body">
             <table>
                 <tr>
                     <th>Profession</th>
@@ -119,13 +121,116 @@
                 </tr>
                 <tr>
                     <th>Mail</th>
-                    <td><a href="mailto:{{ $details['step2']['mail'] }}">{{ $details['step2']['mail'] }}</a></td>
+                    <td><a href="mailto:{{ $details['step2']['mail'] }}" target="_blank">{{ $details['step2']['mail'] }}</a></td>
                 </tr>
-                <!-- Add more rows as needed -->
+                <tr>
+                    <th>Nombre de Salariés + Patron</th>
+                    <td>{{ $details['step2']['nombre_salaries'] }}</td>
+                </tr>
+                <tr>
+                    <th>Chiffre d'affaires</th>
+                    <td>{{ $details['step2']['chiffre_affaires'] }}</td>
+                </tr>
+                <tr>
+                    <th>Date de création</th>
+                    <td>{{ $details['step2']['date_creation'] }}</td>
+                </tr>
+                <tr>
+                    <th>Nom &amp; Prénom du Dirigeant</th>
+                    <td>{{ $details['step2']['nom_dirigeant'] }}</td>
+                </tr>
+                <tr>
+                    <th>Date de Naissance</th>
+                    <td>{{ $details['step2']['date_naissance'] }}</td>
+                </tr>
+                <tr>
+                    <th>Avez-vous déjà été assuré</th>
+                    <td>{{ $details['step3']['deja_assure'] }}</td>
+                </tr>
+                <tr>
+                    <th>Nombre d'années d'assurance</th>
+                    <td>{{ $details['step3']["assureur"]['annee'] }}</td>
+                </tr>
+                <tr>
+                    <th>Votre contrat est-il en cours</th>
+                    <td>{{ $details['step3']["assureur"]['en_cours'] }}</td>
+                </tr>
+                <tr>
+                    <th>Date de résiliation de votre dernier contrat</th>
+                    <td>{{ $details['step3']["assureur"]['date_resiliation'] }}</td>
+                </tr>
+                <tr>
+                    <th>Nom de l'ancienne compagnie</th>
+                    <td>{{ $details['step3']["assureur"]['nom'] }}</td>
+                </tr>
+                <tr>
+                    <th>Nombre de sinistres déclarés sur 36 mois</th>
+                    <td>{{ $details['step3']["assureur"]['nombre_sinistre'] }}</td>
+                </tr>
+                <tr>
+                    <th>Montant des sinistres déclarés sur 36 mois</th>
+                    <td>{{ $details['step3']["assureur"]['montant_sinistre'] }}</td>
+                </tr>
+                <tr>
+                    <th>Votre ancien contrat a-t-il été résilié pour non-paiement</th>
+                    <td>{{ $details['step3']["assureur"]['non_paiement'] }}</td>
+                </tr>
+                <tr>
+                    <th>Si oui, avez-vous réglé l’arriéré à la compagnie</th>
+                    <td>{{ $details['step3']["assureur"]['arriere'] }}</td>
+                </tr>
+                <tr>
+                    <td>Votre ancien contrat a-t-il été résilié pour fausse déclaration</th>
+                    <td>{{ $details['step3']["assureur"]['fausse_declaration'] }}</td>
+                </tr>
+                <tr>
+                    <th>Donnez vous des chantiers en sous traitance à plus de 30%</th>
+                    <td>{{ $details['step4']['chantiers_sous_traitance'] }}</td>
+                </tr>
+                <tr>
+                    <td>Souhaitez vous la reprise du passé sur 1 an (+15%)</th>
+                    <td>{{ $details['step4']['reprise_un_annee'] }}</td>
+                </tr>
+                <tr>
+                    <th>Etes-vous en redressement judiciaire</th>
+                    <td>{{ $details['step4']['redressement_judiciaire'] }}</td>
+                </tr>
+                <tr>
+                    <td>Avez-vous des diplomes du batiment</th>
+                    <td>{{ $details['step4']['diplomes_batiment'] }}</td>
+                </tr>
+                <tr>
+                    <th>Activité principale</th>
+                    <td>{{$details['step5'][0]}}</td>
+                </tr>
+                <tr>
+                    <td>Réalisez-vous des activités secondaires</th>
+                    <td>
+                        @foreach ( $details['step5'] as $activity)
+                        {{ $activity }} ,
+                        @endforeach
+                    </td>
+                </tr>
+                <tr>
+                    <th>Date d'effet demandée</th>
+                    <td>{{ $details['step6']['date_effet'] }}</td>
+                </tr>
+                <tr>
+                    <th>Franchise</th>
+                    <td>{{ $details['step6']['franchise'] }}</td>
+                </tr>
+                <tr>
+                    <th>Fractionnement</th>
+                    <td>{{ $details['step6']['fractionnement'] }}</td>
+                </tr>
+                <tr>
+                    <th>Observations diverses</th>
+                    <td>{{ $details['step6']['observations_diverses'] }}</td>
+                </tr>
             </table>
         </div>
         <div class="footer">
-            &copy; 2025 Décennale Express. Tous droits réservés.
+            © 2025 Décennale Express. All rights reserved.
         </div>
     </div>
 </body>
